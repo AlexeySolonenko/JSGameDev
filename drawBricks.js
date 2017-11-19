@@ -17,7 +17,7 @@ define(
           };
         };
       };
-      return vars.bricks;
+      //return vars.bricks;
     }
   }
 );

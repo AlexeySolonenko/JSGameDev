@@ -1,14 +1,13 @@
-define( function keyUpHandler(e, x, limit) {
-  return function(e, x, limit) {
-    let rightPressed = false;
-    let leftPressed = false;
+define( function keyUpHandler(e, vars) {
+  return function(e, vars) {
+    vars.rightPressed = false;
+    vars.leftPressed = false;
     if(e.keyCode == 39) {
-      rightPressed = false;
+      vars.rightPressed = false;
     } else if (e.keyCode == 37) {
-      leftPressed = false;
+      vars.leftPressed = false;
     };
-    if(rightPressed && x > limit) rightPressed = false;
-    if(leftPressed && x < 0) leftPressed = false;
-    return [rightPressed, leftPressed];    
+    if(vars.rightPressed && vars.paddleX > vars.canvas.width-vars.paddleWidth) vars.rightPressed = false;
+    if(vars.leftPressed && vars.paddleX < 0) vars.leftPressed = false; 
   };
 });

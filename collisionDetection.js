@@ -16,6 +16,6 @@ define(function collisionDetection(vars){
         }
       }; // for
     }; // for
-    return [vars.bricks, vars.ballDy, vars.score];
+    //return [vars.bricks, vars.ballDy, vars.score];
   };
 });

@@ -1,15 +1,13 @@
-define(function(e,canvasOffsetLeft, canvasWidth, paddleWidth){
-  return function(e, canvasOffsetLeft, canvasWidth, paddleWidth) {
-    var relativeX = e.clientX - canvasOffsetLeft;
-    let paddleX = 0;
-    if(relativeX >  0 && relativeX < canvasWidth){
-      paddleX = relativeX - paddleWidth/2;
-      if(paddleX > canvasWidth - paddleWidth) paddleX = canvasWidth -paddleWidth;
-      if(paddleX < 0) paddleX = 0;
-      return [paddleX, true];
-    } else {
-      return [0, false];
-    }
+define(function(e,vars){
+  return function(e, vars) {
+    var relativeX = e.clientX - vars.canvas.offsetLeft;
+    vars.paddleX = 0;
+    if(relativeX >  0 && relativeX < vars.canvas.width){
+      vars.paddleX = relativeX - vars.paddleWidth/2;
+      if(vars.paddleX > vars.canvas.width - vars.paddleWidth) vars.paddleX = vars.canvas.width - vars.paddleWidth;
+      if(vars.paddleX < 0) vars.paddleX = 0;
+      //return [paddleX, true];
+    };
 
   };
 });
