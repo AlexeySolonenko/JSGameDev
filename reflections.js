@@ -2,6 +2,13 @@
 
 
 20171119
+
+Need to check document JS command. For instance - document.location.reload().
+
+
+
+
+
 Seems like with this course I learned how Udacity game is supposed to store the 
 pictures and to load them each time from 
 the disk.
