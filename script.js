@@ -44,8 +44,8 @@ requirejs(['vars','initVars','drawBall', 'drawPaddle', 'bounce', 'keyDownHandler
           document.location.reload();
         } else { // reset
           vars.ballX = vars.canvas.width/2;
-          vars.ballY = vars.canvas.height-vars.ballRadius;
-          vars.ballDx = 4;
+          vars.ballY = vars.canvas.height-vars.ballRadius-vars.paddleHeight;
+          vars.ballDx = -vars.ballDx;
           vars.ballDy = -4;
           vars.paddleX = (vars.canvas.width - vars.paddleWidth)/2;
         }
