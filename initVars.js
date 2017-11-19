@@ -4,7 +4,8 @@ define(function initVars(vars){
     vars.ballY = vars.canvas.height - vars.ballRadius - vars.paddleHeight;
     vars.ballDx = 4;
     vars.ballDy = -4;
-    vars.paddleX = (vars.canvas.width - vars.paddleWidth)/2;  
+    vars.lives = 3;
+    vars.paddleX = (vars.canvas.width - vars.paddleWidth)/2;
     for (c = 0; c<vars.brickColumnCount; c++){
       vars.bricks[c] = [];
         for(r=0; r<vars.brickRowCount; r++){
