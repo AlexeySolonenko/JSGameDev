@@ -41,6 +41,8 @@ requirejs(['vars','initVars','drawBall', 'drawPaddle', 'bounce', 'keyDownHandler
         vars.lives--;
         if( vars.lives <= 0){
           alert("GAME OVER"); // game over
+          vars.lives = 3;
+          vars.score = 0;
           document.location.reload();
         } else { // reset
           vars.ballX = vars.canvas.width/2;
