@@ -1,10 +1,10 @@
-define( function drawBall(x, y, r) {
+define( function drawBall(vars) {
   
-  return function(x,y, r) {
-    ctx.beginPath();
-    ctx.arc(x, y, r, 0, Math.PI*2);
-    ctx.fillStyle= "#0095DD";
-    ctx.fill();
-    ctx.closePath();
+  return function(vars) {
+    vars.ctx.beginPath();
+    vars.ctx.arc(vars.ballX, vars.ballY, vars.ballRadius, 0, Math.PI*2);
+    vars.ctx.fillStyle= "#0095DD";
+    vars.ctx.fill();
+    vars.ctx.closePath();
   };
 });

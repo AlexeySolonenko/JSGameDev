@@ -1,8 +1,8 @@
-define( function(ballX, paddleX, paddleWidth, paddleHeight, canvasHeight , ballY, ballDy, ballRadius){
-  return function(ballX, paddleX, paddleWidth, paddleHeight, canvasHeight , ballY, ballDy, ballRadius) {
+define( function(vars){
+  return function(vars) {
     let ballOver = false;
-    if((ballX > paddleX && ballX <= paddleX + paddleWidth) && 
-      ((ballY+ballRadius >= canvasHeight-paddleHeight-Math.abs(ballDy)) && (ballY + ballRadius < canvasHeight - paddleHeight + Math.abs(ballDy)))) {
+    if((vars.ballX > vars.paddleX && vars.ballX <= vars.paddleX + vars.paddleWidth) && 
+      ((vars.ballY+vars.ballRadius >= vars.canvas.height-vars.paddleHeight-Math.abs(vars.ballDy)) && (vars.ballY + vars.ballRadius < vars.canvas.height - vars.paddleHeight + Math.abs(vars.ballDy)))) {
       ballOver = true;
     } else {
       ballOver = false;

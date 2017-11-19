@@ -1,23 +1,23 @@
 define(
-  function drawBricks(bricks, brickColumnCount, brickRowCount, brickWidth, brickHeight, brickOffsetLeft, brickOffsetTop, brickPadding){
-    return function(bricks, brickColumnCount, brickRowCount, brickWidth, brickHeight, brickOffsetLeft, brickOffsetTop, brickPadding){
-      for(c=0; c<brickColumnCount; c++){
-        for(r=0; r<brickRowCount; r++){
-          if(bricks[c][r].status ==1) {
-            let brickX = (c*(brickWidth+brickPadding)) + brickOffsetLeft;
-            let brickY = (r*(brickHeight+brickPadding)) + brickOffsetTop;
+  function drawBricks(vars){
+    return function(vars){
+      for(c=0; c<vars.brickColumnCount; c++){
+        for(r=0; r<vars.brickRowCount; r++){
+          if(vars.bricks[c][r].status ==1) {
+            let brickX = (c*(vars.brickWidth+vars.brickPadding)) + vars.brickOffsetLeft;
+            let brickY = (r*(vars.brickHeight+vars.brickPadding)) + vars.brickOffsetTop;
             
-            bricks[c][r].x = brickX;
-            bricks[c][r].y = brickY;
-            ctx.beginPath();
-            ctx.rect(brickX, brickY, brickWidth, brickHeight);
-            ctx.fillStyle = "#0095dd";
-            ctx.fill();
-            ctx.closePath();
+            vars.bricks[c][r].x = brickX;
+            vars.bricks[c][r].y = brickY;
+            vars.ctx.beginPath();
+            vars.ctx.rect(brickX, brickY, vars.brickWidth, vars.brickHeight);
+            vars.ctx.fillStyle = "#0095dd";
+            vars.ctx.fill();
+            vars.ctx.closePath();
           };
         };
       };
-      return bricks;
+      return vars.bricks;
     }
   }
 );

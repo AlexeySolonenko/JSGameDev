@@ -1,14 +1,14 @@
-define(function collisionDetection(bricks, brickColumnCount, brickRowCount, ballX, ballY, ballDy, brickWidth, brickHeight, score, lives){
-  return function(bricks, brickColumnCount, brickRowCount, ballX, ballY, ballDy, brickWidth, brickHeight, score, lives){
-    for(c=0; c<brickColumnCount; c++){
-      for(r=0; r<brickRowCount; r++){
-        var b = bricks[c][r];
+define(function collisionDetection(vars){
+  return function(vars){
+    for(c=0; c<vars.brickColumnCount; c++){
+      for(r=0; r<vars.brickRowCount; r++){
+        var b = vars.bricks[c][r];
         if(b.status ==1) {
-          if(ballX > b.x && ballX < b.x + brickWidth && ballY > b.y && ballY < b.y+brickHeight){
-            ballDy = -ballDy;
-            bricks[c][r].status = 0;
-            score++;
-            if(score == brickColumnCount * brickRowCount){
+          if(vars.ballX > b.x && vars.ballX < b.x + vars.brickWidth && vars.ballY > b.y && vars.ballY < b.y+vars.brickHeight){
+            vars.ballDy = -vars.ballDy;
+            vars.bricks[c][r].status = 0;
+            vars.score++;
+            if(vars.score == vars.brickColumnCount * vars.brickRowCount){
               alert("YOU WIN, CONGRATULATIONS!");
               document.location.reload();
             }
@@ -16,6 +16,6 @@ define(function collisionDetection(bricks, brickColumnCount, brickRowCount, ball
         }
       }; // for
     }; // for
-    return [bricks, ballDy, score];
+    return [vars.bricks, vars.ballDy, vars.score];
   };
 });

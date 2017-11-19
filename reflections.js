@@ -5,6 +5,8 @@
 
 Need to check document JS command. For instance - document.location.reload().
 
+Completed the course. Learned requirejs. Spend 10 hours instead of 1.5, however, learned a lot and practiced also.
+
 
 
 
