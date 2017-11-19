@@ -1,10 +1,10 @@
 
 
 // TO REFACTOR 
-// 1) ELIMINATE UNNECESSARY VARS. ASSIGNMENTS
-// WITH KEYDOWN IN FUNCTIONS SINCE NOW ARE IRRELEVANT
-// 2) TO ADD RESET FUNCTION AND TO PUT SCORE AND LIVES FUNCTIONS
-// IN SEPARATE FILES TO MAKE CODE MORE CONCISE
+// 1) bounce (split in two functions)
+// 2) right/left method to a separate functoin
+
+
 
 
 var gCanvas = document.getElementById("myCanvas");
